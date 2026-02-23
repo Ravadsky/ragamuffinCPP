@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="URenderSubSystem.cpp">
+      <Filter>SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="USubSystem.cpp">
+      <Filter>SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="UWorldSubSystem.cpp">
+      <Filter>SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetManager.cpp">
+      <Filter>SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="UInputController.cpp">
+      <Filter>SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="APlayer.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="AActor.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="UObject.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UWorldSubSystem.h">
+      <Filter>SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="URenderSubSystem.h">
+      <Filter>SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="USubSystem.h">
+      <Filter>SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetManager.h">
+      <Filter>SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="UInputController.h">
+      <Filter>SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="APlayer.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="AActor.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreMinimal.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FLibrary.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="UObject.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CorePhysics.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SubSystems">
+      <UniqueIdentifier>{d60a1377-9cd7-4cc8-9cc7-3de93d8cabb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Actors">
+      <UniqueIdentifier>{1c1df82a-0600-4212-b8e3-c4e616d8616e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{d5362456-6b9b-46d7-88b4-ec1dc01c1569}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

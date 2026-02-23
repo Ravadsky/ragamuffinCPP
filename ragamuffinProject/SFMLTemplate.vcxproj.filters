@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4889d1bf-fbe5-4aa4-974c-4516cd1a685f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Actors">
+      <UniqueIdentifier>{232137f9-a381-453d-9525-f68176de86f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GlobalObjects">
+      <UniqueIdentifier>{d3ce980d-3d42-48c3-ac8a-a7a8251dfa46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetManager.cpp">
+      <Filter>GlobalObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="AActor.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="APlayer.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="USubSystem.cpp">
+      <Filter>GlobalObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="UInputController.cpp">
+      <Filter>GlobalObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="UObject.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CoreMinimal.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetManager.h">
+      <Filter>GlobalObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="APlayer.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="AActor.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="UInputController.h">
+      <Filter>GlobalObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="USubSystem.h">
+      <Filter>GlobalObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="UObject.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
