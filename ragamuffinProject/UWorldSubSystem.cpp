@@ -1,45 +1,36 @@
 #include "UWorldSubSystem.h"
 #include "AActor.h"
 #include "APlayer.h"
+#include "ARoom.h"
 
 void UWorldSubSystem::Update()
 {
 }
-
+// тайм апдейт
 void UWorldSubSystem::UpdateTime()
 {
 	DeltaTimer = GameClock.restart();
 	DeltaTime = DeltaTimer.asSeconds();
 }
+//костыльная  отрисовка комнаты 
 UWorldSubSystem::UWorldSubSystem()
 {
-
-	int id = 0;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < WORLD_SIZE; i++)
 	{
-		int counter = 0;
-
-		for (char& code : Room[i])
+		for (int j = 0; j < WORLD_SIZE; j++)
 		{
-			switch (code)
-			{
-			case '1': id = 2001;
-				break;
-			case '2': id = 2002;
-				break;
-			case '3': id = 3001;
-				break;
-			};
-			AActor* Actor = new AActor(id);
-			Actor->SetLocation({ counter * 128.f, i*128.f });
-			counter++;
+			if (i == 0 || i == WORLD_SIZE-1 ||
+				j == 0 || j == WORLD_SIZE - 1) new ARoom(i, j, 3);
+			else if (i == 4 && j == 4) new ARoom(i, j, 0);
+			else new ARoom(i, j);
+		}
 	}
-	}
-	APlayer::GetPlayer().SetLocation({ 256.f, 256.f });
-
+		//	количество комнат * размер комнаты / 2 
+	const float WorldCenter{ WORLD_SIZE * (SPRITE_GAME_SIZE * ROOM_SIZE) / 2 };
+	APlayer::GetPlayer().SetLocation({ WorldCenter, WorldCenter });
 }
 
-
+// обновление(переопределение?) акторов
 void UWorldSubSystem::UpdateEntities()
 {
 	for (AActor* Actor : AActor::AActors)
