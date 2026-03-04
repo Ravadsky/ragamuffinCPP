@@ -9,9 +9,10 @@ int main()
 {
 	// окно
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIGHT, WINDOW_HEIGHT), "ragamuffin");
+	//установить фпс лимит
+	window.setFramerateLimit(144);
 	// вызов "обработчика"? мира
 	GetWorldSubSystem();
-
 
 
 	

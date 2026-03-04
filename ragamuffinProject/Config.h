@@ -10,7 +10,14 @@ const sf::Vector2f CAMERA_PIVOT = { WINDOW_WIGHT / 2, WINDOW_HEIGHT / 2 };
 
 const int SPRITE_RAW_SIZE = 8;
 const int SPRITE_GAME_SIZE = 128;
+const sf::Vector2f OBJECT_SIZE = { SPRITE_GAME_SIZE / SPRITE_RAW_SIZE, SPRITE_GAME_SIZE / SPRITE_RAW_SIZE };
+
+
 
 const int ROOM_COUNT = 4;
 const int ROOM_SIZE = 10;
 const int WORLD_SIZE = 9;
+
+
+const int ANIM_FRAMES_COUNT = 6;
+const float ANIM_SPEED = 0.5f;

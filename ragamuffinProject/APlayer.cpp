@@ -2,8 +2,14 @@
 #include "FLibrary.h"
 #include <ranges>
 #include "Collision.h"
+#include "UAnimatedSpriteComponent.h"
 
-APlayer::APlayer() : AActor(1001) {};
+APlayer::APlayer() : AActor(1001)
+{
+	ActorData* ObjectData = AssetManager::GetAssetManager()->GetActorData(1001);
+
+	SpriteComponent = std::make_shared<UAnimatedSpriteComponent>(this, ObjectData->DTexture);;
+};
 
 // Обновление позиции игрока
 void APlayer::Update()
@@ -26,4 +32,25 @@ void APlayer::Move()
 	AddLocation((PlayerDirection * Speed) * GetWorldDeltaTime());
 	//сетит направление в 0, для предотвращения движения
 	APlayer::GetPlayer().SetDirection({ 0.f, 0.f });
+}
+
+void APlayer::SetPlayerState(State NewState, bool isLooping)
+{
+	auto AnimComponent = std::static_pointer_cast<UAnimatedSpriteComponent>(SpriteComponent);
+
+	if (AnimComponent->isDone)
+	{
+		PlayerState = NewState;
+
+		AnimComponent->isLooping = isLooping;
+		AnimComponent->isDone = isLooping;
+
+		if (!isLooping) AnimComponent->CurrentFrame = 0;
+	}
+
+}
+
+State& APlayer::GetPlayerState()
+{
+	return PlayerState;
 }

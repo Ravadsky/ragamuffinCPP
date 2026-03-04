@@ -38,4 +38,9 @@ void UWorldSubSystem::UpdateEntities()
 		Actor->Update();
 	}
 
+	for (UActorComponent* Comp : UActorComponent::AllComponents)
+	{
+		Comp->Update();
+	}
+
 }

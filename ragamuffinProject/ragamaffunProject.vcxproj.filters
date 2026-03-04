@@ -32,6 +32,15 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="ARoom.cpp" />
+    <ClCompile Include="UActorComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="USpriteComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UAnimatedSpriteComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UWorldSubSystem.h">
@@ -74,6 +83,15 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="ARoom.h" />
+    <ClInclude Include="USpriteComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UActorComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UAnimatedSpriteComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SubSystems">
@@ -87,6 +105,9 @@
     </Filter>
     <Filter Include="World">
       <UniqueIdentifier>{93f9b1af-c2d9-4b01-a42e-da56c97db8ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{0f914a33-04a7-48d3-80ec-b9d2e11cea07}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
