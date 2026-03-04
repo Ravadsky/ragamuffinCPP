@@ -2,7 +2,7 @@
 #include "APlayer.h"
 
 using namespace sf;
-
+// управление 
 void UInputController::GetInput()
 {
 	sf::Vector2f Direction;
@@ -12,7 +12,7 @@ void UInputController::GetInput()
 	if (Keyboard::isKeyPressed(Keyboard::A)) { Direction += {-1.f, 0.f};;}
 	APlayer::GetPlayer().SetDirection(Direction);
 }
-
+// абстрактный класс?
 void UInputController::Update()
 {
 

@@ -164,6 +164,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="AActor.cpp" />
+    <ClCompile Include="ARoom.cpp" />
     <ClCompile Include="UInputController.cpp" />
     <ClCompile Include="UObject.cpp" />
     <ClCompile Include="URenderSubSystem.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="AActor.h" />
     <ClInclude Include="CorePhysics.h" />
     <ClInclude Include="FLibrary.h" />
+    <ClInclude Include="ARoom.h" />
     <ClInclude Include="UInputController.h" />
     <ClInclude Include="UObject.h" />
     <ClInclude Include="URenderSubSystem.h" />

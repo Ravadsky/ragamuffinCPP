@@ -31,6 +31,7 @@
     <ClCompile Include="Collision.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="ARoom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UWorldSubSystem.h">
@@ -72,6 +73,7 @@
     <ClInclude Include="CorePhysics.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="ARoom.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SubSystems">
@@ -82,6 +84,9 @@
     </Filter>
     <Filter Include="Core">
       <UniqueIdentifier>{d5362456-6b9b-46d7-88b4-ec1dc01c1569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{93f9b1af-c2d9-4b01-a42e-da56c97db8ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

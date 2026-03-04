@@ -1,6 +1,7 @@
 #pragma once
 #include "AActor.h"
 
+//обработка персонажа? Реаилизация скорости, направления и возможность перемещения с обновлением состояния
 class APlayer : public AActor
 {
 	sf::Vector2f PlayerDirection;

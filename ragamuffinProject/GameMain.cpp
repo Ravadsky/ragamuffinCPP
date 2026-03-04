@@ -7,15 +7,16 @@
 
 int main()
 {
+	// окно
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIGHT, WINDOW_HEIGHT), "ragamuffin");
-
+	// вызов "обработчика"? мира
 	GetWorldSubSystem();
 
 
 
-
+	
 	while (window.isOpen())
-	{
+	{// вызов подсчета времени пока окно открыто
 		GetWorldSubSystem().UpdateTime();
 
 		sf::Event event;

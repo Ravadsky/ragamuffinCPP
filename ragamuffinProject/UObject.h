@@ -1,6 +1,6 @@
 #pragma once
 
-enum class ObjectType { Static, Dynamic, Widget };
+enum class ObjectType { Static, Dynamic, Widget, NonDrawable };
 
 
 class UObject
