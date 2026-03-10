@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 
-class AActor; class APlayer;
+class AActor;
+class APlayer;
 
 enum class CollisionType{ Block, Overlap, Ignore };
 

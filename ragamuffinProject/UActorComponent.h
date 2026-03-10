@@ -13,8 +13,9 @@ public:
 	static inline std::vector<UActorComponent*> AllComponents;
 
 	UActorComponent(AActor* Owner);
-	UActorComponent();
+	UActorComponent() = delete;
 	~UActorComponent();
+
 	virtual void Update() = 0;
 };
 

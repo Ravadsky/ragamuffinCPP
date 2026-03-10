@@ -13,8 +13,6 @@ int main()
 	window.setFramerateLimit(144);
 	// вызов "обработчика"? мира
 	GetWorldSubSystem();
-
-
 	
 	while (window.isOpen())
 	{// вызов подсчета времени пока окно открыто

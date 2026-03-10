@@ -10,19 +10,23 @@ enum State
 
 class APlayer : public AActor
 {
-protected:
+private:
 	State PlayerState = Idle;
+
+protected:
 	Vector2f PlayerDirection;
-	float Speed{ 400.f };
+	float Speed = PLAYER_SPEED;
 
 public:
 	APlayer();
 
 	void Update() override;
 	
-	void Move();
-
 	static inline APlayer& GetPlayer() { static APlayer Hero; return Hero; };
+
+	void Move(Vector2f Direction);
+
+	void Interact();
 
 	inline void SetDirection(Vector2f vec) { PlayerDirection = vec; };
 	inline Vector2f GetDirection() { return PlayerDirection; };
@@ -31,5 +35,7 @@ public:
 
 	void SetPlayerState(State NewState, bool isLooping);
 	State& GetPlayerState();
+
+	bool CanPlayerAction();
 };
 

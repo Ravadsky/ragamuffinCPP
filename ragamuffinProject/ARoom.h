@@ -27,7 +27,7 @@ public:
     ARoom(int x, int y);
     ARoom(int x, int y, int RoomIndex);
 
-    virtual void Update() override;
+    void Update() override;
 
 };
 

@@ -11,6 +11,6 @@ USpriteComponent::USpriteComponent(AActor* Owner, sf::Texture* tex) : UActorComp
 	ComponentSprite.setTexture(*tex);
 }
 
-USpriteComponent::USpriteComponent()
+void USpriteComponent::SetComponentState(bool param)
 {
 }

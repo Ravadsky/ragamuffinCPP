@@ -4,9 +4,6 @@
     <ClCompile Include="URenderSubSystem.cpp">
       <Filter>SubSystems</Filter>
     </ClCompile>
-    <ClCompile Include="USubSystem.cpp">
-      <Filter>SubSystems</Filter>
-    </ClCompile>
     <ClCompile Include="UWorldSubSystem.cpp">
       <Filter>SubSystems</Filter>
     </ClCompile>
@@ -32,14 +29,17 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="ARoom.cpp" />
-    <ClCompile Include="UActorComponent.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
     <ClCompile Include="USpriteComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="UAnimatedSpriteComponent.cpp">
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="USubSystem.cpp">
+      <Filter>SubSystems\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="UActorComponent.cpp">
+      <Filter>Components\Abstract</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,9 +47,6 @@
       <Filter>SubSystems</Filter>
     </ClInclude>
     <ClInclude Include="URenderSubSystem.h">
-      <Filter>SubSystems</Filter>
-    </ClInclude>
-    <ClInclude Include="USubSystem.h">
       <Filter>SubSystems</Filter>
     </ClInclude>
     <ClInclude Include="AssetManager.h">
@@ -86,11 +83,14 @@
     <ClInclude Include="USpriteComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="UActorComponent.h">
-      <Filter>Components</Filter>
-    </ClInclude>
     <ClInclude Include="UAnimatedSpriteComponent.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="USubSystem.h">
+      <Filter>SubSystems\Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="UActorComponent.h">
+      <Filter>Components\Abstract</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +108,12 @@
     </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{0f914a33-04a7-48d3-80ec-b9d2e11cea07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubSystems\Abstract">
+      <UniqueIdentifier>{e27e8c84-ea7d-45f8-921a-a74fb766c434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Abstract">
+      <UniqueIdentifier>{9f23e772-3afa-4942-ab61-2319687a0956}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

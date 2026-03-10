@@ -6,10 +6,6 @@ UActorComponent::UActorComponent(AActor* Owner)
 	AllComponents.push_back(this);
 }
 
-UActorComponent::UActorComponent()
-{
-}
-
 UActorComponent::~UActorComponent()
 {
 	auto _iterator = std::find(AllComponents.begin(), AllComponents.end(), this);

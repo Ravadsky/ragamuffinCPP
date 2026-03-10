@@ -8,14 +8,16 @@ private:
 
 public:
 	bool isLooping = true;
-	bool isDone = true;
+	bool AnimEnd = false;
 	float ElapsedTime = 0.f;
 	int CurrentFrame = 0;
-	const float ANIM_DELTA_TIME = 1 / (ANIM_FRAMES_COUNT * ANIM_SPEED);
+
 	UAnimatedSpriteComponent(AActor* Owner, sf::Texture* tex);
-	UAnimatedSpriteComponent();
+	UAnimatedSpriteComponent() = delete;
 
 	void Update() override;
+
+	void SetComponentState(bool param) override;
 
 	void AddFrame(int& FrameCounter);
 

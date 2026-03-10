@@ -7,10 +7,6 @@ UAnimatedSpriteComponent::UAnimatedSpriteComponent(AActor* Owner, sf::Texture* t
 	ComponentSprite.setTextureRect({ CurrentFrame * SPRITE_RAW_SIZE, 0, SPRITE_RAW_SIZE, SPRITE_RAW_SIZE });;
 }
 
-UAnimatedSpriteComponent::UAnimatedSpriteComponent()
-{
-}
-
 void UAnimatedSpriteComponent::Update()
 {
 	ElapsedTime = ElapsedTime + GetWorldDeltaTime();
@@ -32,6 +28,12 @@ void UAnimatedSpriteComponent::Update()
 	ComponentSprite.setTextureRect({ CurrentFrame * SPRITE_RAW_SIZE, SpriteSheetOffset * SPRITE_RAW_SIZE, SPRITE_RAW_SIZE, SPRITE_RAW_SIZE });
 }
 
+void UAnimatedSpriteComponent::SetComponentState(bool param)
+{
+	isLooping = param;
+	if (!param) CurrentFrame = 0;
+}
+
 void UAnimatedSpriteComponent::AddFrame(int& FrameCounter)
 {
 	{
@@ -42,7 +44,7 @@ void UAnimatedSpriteComponent::AddFrame(int& FrameCounter)
 		else
 		{
 			if (isLooping) FrameCounter = 0;
-			else isDone = true;
+			else AnimEnd = true;
 		}
 	}
 }

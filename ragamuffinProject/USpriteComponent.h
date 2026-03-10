@@ -7,6 +7,8 @@ public:
 	sf::Sprite ComponentSprite;
 	void Update() override;
 	USpriteComponent(AActor* Owner, sf::Texture* tex);
-	USpriteComponent();
+	USpriteComponent() = delete;
+
+	virtual void SetComponentState(bool param);
 };
 

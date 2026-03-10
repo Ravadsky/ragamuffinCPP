@@ -3,20 +3,18 @@
 #include "UInputController.h"
 #include "APlayer.h"
 
-AActor::AActor() : AActor(2001) {};
-
-// получение актора для установки его текстуры, коллизии и тд
-AActor::AActor(int id)
+AActor::AActor() : AActor(0000) {};
+AActor::AActor(int id) : ID(id)
 {
-	ID = id;
-	ActorData* ObjectData = AssetManager::GetAssetManager()->GetActorData(id);
-	SpriteComponent = std::make_shared<USpriteComponent>(this, ObjectData->DTexture);
-	//Type принимает тип объекта - статический/динамический/виджет, обращаясь к полю объекта DObjectType
-	Type = ObjectData->DObjectType;
-	//CollisionPreset принимает значение типа коллизии объекта
-	CollisionPreset = ObjectData->DCollisionType;
-	// Записываем актора в вектор
 	AActors.push_back(this);
+
+	ActorData* Data = AssetManager::GetAssetManager()->GetActorData(id);
+	SpriteComponent = std::make_shared<USpriteComponent>(this, Data->DTexture);
+	//Type принимает тип объекта - статический/динамический/виджет, обращаясь к полю объекта DObjectType
+	Type = Data->DObjectType;
+	//CollisionPreset принимает значение типа коллизии объекта
+	CollisionPreset = Data->DCollisionType;
+	// Записываем актора в вектор
 }
 
 //отрисовка камеры
@@ -40,20 +38,16 @@ void AActor::Update()
 
 }
 
-// методы работы с векторами?
-//установка позиции
-void AActor::SetLocation(sf::Vector2f NewLocation)
+Vector2f AActor::GetLocation() const
+{
+	return ObjLocation;
+}
+void AActor::SetLocation(Vector2f NewLocation)
 {
 	this->ObjLocation = NewLocation;
 }
-//смена локации?
-void AActor::AddLocation(sf::Vector2f Location)
+void AActor::AddLocation(Vector2f Location)
 {
 	this->ObjLocation += Location;
-}
-//Получение локации
-sf::Vector2f AActor::GetLocation() const
-{
-	return ObjLocation;
 }
 
