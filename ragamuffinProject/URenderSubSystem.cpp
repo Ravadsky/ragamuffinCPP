@@ -26,5 +26,6 @@ void URenderSubSystem::DrawEntities(sf::RenderWindow& window)
 	//отрисовка динамиков
 	for (AActor* Actor : dynamics) { Actor->Draw(window); }
 	//вывод окошка
+
 	window.display();
 }

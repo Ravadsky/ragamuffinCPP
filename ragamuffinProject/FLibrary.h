@@ -1,5 +1,6 @@
 #pragma once
 #include "UWorldSubSystem.h"
+#include "coreMinimal.h"
 #include <cstdlib>
 
 inline UWorldSubSystem& GetWorldSubSystem()
@@ -18,3 +19,4 @@ inline float GetWorldDeltaTime()
 {
 	return UWorldSubSystem::GetWorldSubSystem().DeltaTime;
 }
+

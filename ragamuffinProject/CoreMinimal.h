@@ -3,3 +3,5 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "UObject.h"
+
+using namespace sf;

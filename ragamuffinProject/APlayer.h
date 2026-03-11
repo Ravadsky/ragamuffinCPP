@@ -1,23 +1,41 @@
 #pragma once
 #include "AActor.h"
 
-//обработка персонажа? Реаилизация скорости, направления и возможность перемещения с обновлением состояния
+enum State
+{
+	Idle,
+	Move,
+	Interact,
+};
+
 class APlayer : public AActor
 {
-	sf::Vector2f PlayerDirection;
+private:
+	State PlayerState = Idle;
+
+protected:
+	Vector2f PlayerDirection;
+	float Speed = PLAYER_SPEED;
+
 public:
 	APlayer();
-	float Speed{ 400.f };
-
-	inline void SetDirection(sf::Vector2f vec) { PlayerDirection = vec; };
-
-	inline sf::Vector2f GetDirection() { return PlayerDirection; };
 
 	void Update() override;
+	
+	static inline APlayer& GetPlayer() { static APlayer Hero; return Hero; };
 
+	void Move(Vector2f Direction);
 
-	static inline APlayer& GetPlayer() {static APlayer Hero; return Hero; };
+	void Interact();
 
-	void Move();
+	inline void SetDirection(Vector2f vec) { PlayerDirection = vec; };
+	inline Vector2f GetDirection() { return PlayerDirection; };
+
+	inline float GetPlayerSpeed() { return Speed; };
+
+	void SetPlayerState(State NewState, bool isLooping);
+	State& GetPlayerState();
+
+	bool CanPlayerAction();
 };
 

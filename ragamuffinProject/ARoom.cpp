@@ -16,7 +16,6 @@ ARoom::ARoom(int x, int y, int RoomIndex)
 
 	while (Line != RoomNames[RoomIndex]) std::getline(RoomFile, Line);
 
-
 	for (int i = 0; i < ROOM_SIZE; i++)
 	{
 		std::getline(RoomFile, Line);

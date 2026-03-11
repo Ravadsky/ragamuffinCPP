@@ -2,18 +2,34 @@
 #include "FLibrary.h"
 #include <ranges>
 #include "Collision.h"
+#include "UAnimatedSpriteComponent.h"
 
-APlayer::APlayer() : AActor(1001) {};
+APlayer::APlayer() : AActor(1001)
+{
+	ActorData* ObjectData = AssetManager::GetAssetManager()->GetActorData(1001);
+
+	SpriteComponent = std::make_shared<UAnimatedSpriteComponent>(this, ObjectData->DTexture);;
+};
 
 // ќбновление позиции игрока
-void APlayer::Update()
+void APlayer::Update() 
 {
-	Move();
+	auto AnimComponent = std::static_pointer_cast<UAnimatedSpriteComponent>(SpriteComponent);
+	if (AnimComponent->AnimEnd)
+	{
+		SetPlayerState(State::Idle, true);
+		AnimComponent->AnimEnd = false;
+	}
 }
 
 // покадровое передвижение с фильтром блок коллизии
-void APlayer::Move()
-{//автоматическое присваивание переменной Actors тип объекта AActor::AActors
+void APlayer::Move(Vector2f Direction)
+{
+	SetDirection(Direction);
+
+	if (Direction.x || Direction.y) { SetPlayerState(State::Move, true); }
+	else { SetPlayerState(State::Idle, true); return; }
+	//автоматическое присваивание переменной Actors тип объекта AActor::AActors
 	auto Actors = AActor::AActors
 		//функтор возвращает значение только тех акторов, которые с блок коллизией
 		| std::views::filter([](AActor* Actor) {return Actor->CollisionPreset == CollisionType::Block; });
@@ -26,4 +42,26 @@ void APlayer::Move()
 	AddLocation((PlayerDirection * Speed) * GetWorldDeltaTime());
 	//сетит направление в 0, дл€ предотвращени€ движени€
 	APlayer::GetPlayer().SetDirection({ 0.f, 0.f });
+}
+
+void APlayer::Interact()
+{
+	SetPlayerState(State::Interact, false);
+}
+
+void APlayer::SetPlayerState(State NewState, bool isLooping)
+{
+	PlayerState = NewState;
+	SpriteComponent->SetComponentState(isLooping);
+}
+
+State& APlayer::GetPlayerState()
+{
+	return PlayerState;
+}
+
+bool APlayer::CanPlayerAction()
+{
+	auto _state = GetPlayerState();
+	return  (_state == State::Idle) || (_state == State::Move);
 }

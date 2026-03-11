@@ -1,37 +1,41 @@
 #pragma once
+#include <vector>
+
 #include "CoreMinimal.h"
 #include "AssetManager.h"
-#include <vector>
 #include "Collision.h"
-
+#include "USpriteComponent.h"
 
 
 class AActor : public UObject
 {
-
-	sf::Sprite ObjSprite;
-	sf::Vector2f ObjSize;
-	sf::Vector2f ObjLocation;
+private:
+	int ID;
 
 protected:
-	int ID;
+	std::vector<UActorComponent*> ActorComponents;
+
+	Vector2f ObjLocation = { 0.f, 0.f };
+	std::shared_ptr<USpriteComponent> SpriteComponent;
 
 public:
 	static inline std::vector<AActor*> AActors;
 	CollisionType CollisionPreset;
 
-	AActor(int id);
 	AActor();
+	AActor(int id);
 
-	void Draw(sf::RenderWindow& window);
+	void Update() override;
+
+	void Draw(RenderWindow& window);
 
 	inline int GetID() { return ID; };
 
-	virtual void Update() override;
+	inline USpriteComponent* GetSpriteComponent() {return SpriteComponent.get(); }
 
-	void SetLocation(sf::Vector2f Location);
-	void AddLocation(sf::Vector2f Location);
-	sf::Vector2f GetLocation() const;
+	Vector2f GetLocation() const;
+	void SetLocation(Vector2f Location);
+	void AddLocation(Vector2f Location);
 
 };
 

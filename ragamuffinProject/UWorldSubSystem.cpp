@@ -15,6 +15,8 @@ void UWorldSubSystem::UpdateTime()
 //костыльная  отрисовка комнаты 
 UWorldSubSystem::UWorldSubSystem()
 {
+	DeltaTime = 0.f;
+
 	for (int i = 0; i < WORLD_SIZE; i++)
 	{
 		for (int j = 0; j < WORLD_SIZE; j++)
@@ -26,8 +28,8 @@ UWorldSubSystem::UWorldSubSystem()
 		}
 	}
 		//	количество комнат * размер комнаты / 2 
-	const float WorldCenter{ WORLD_SIZE * (SPRITE_GAME_SIZE * ROOM_SIZE) / 2 };
-	APlayer::GetPlayer().SetLocation({ WorldCenter, WorldCenter });
+	
+	APlayer::GetPlayer().SetLocation({ WORLD_CENTER, WORLD_CENTER });
 }
 
 // обновление(переопределение?) акторов
@@ -36,6 +38,11 @@ void UWorldSubSystem::UpdateEntities()
 	for (AActor* Actor : AActor::AActors)
 	{
 		Actor->Update();
+	}
+
+	for (UActorComponent* Comp : UActorComponent::AllComponents)
+	{
+		Comp->Update();
 	}
 
 }
