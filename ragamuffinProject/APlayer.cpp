@@ -3,6 +3,7 @@
 #include <ranges>
 #include "Collision.h"
 #include "UAnimatedSpriteComponent.h"
+#include "UAudioSubSystem.h"
 
 APlayer::APlayer() : AActor(1001)
 {
@@ -47,6 +48,8 @@ void APlayer::Move(Vector2f Direction)
 void APlayer::Interact()
 {
 	SetPlayerState(State::Interact, false);
+	UAudioSubSystem::GetUAudioSubSystem().CreateNewSound("Sound");
+
 }
 
 void APlayer::SetPlayerState(State NewState, bool isLooping)

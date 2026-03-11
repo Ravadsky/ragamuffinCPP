@@ -41,6 +41,8 @@
     <ClCompile Include="UActorComponent.cpp">
       <Filter>Components\Abstract</Filter>
     </ClCompile>
+    <ClCompile Include="UAudioSubSystem.cpp" />
+    <ClCompile Include="SoundSample.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UWorldSubSystem.h">
@@ -92,6 +94,8 @@
     <ClInclude Include="UActorComponent.h">
       <Filter>Components\Abstract</Filter>
     </ClInclude>
+    <ClInclude Include="UAudioSubSystem.h" />
+    <ClInclude Include="SoundSample.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SubSystems">

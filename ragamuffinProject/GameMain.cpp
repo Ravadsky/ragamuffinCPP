@@ -3,6 +3,7 @@
 #include "UInputController.h"
 #include "UWorldSubSystem.h"
 #include "URenderSubSystem.h"
+#include "UAudioSubSystem.h"
 #include "FLibrary.h"
 
 int main()
@@ -12,6 +13,7 @@ int main()
 	//установить фпс лимит
 	window.setFramerateLimit(144);
 	// вызов "обработчика"? мира
+	UAudioSubSystem::GetUAudioSubSystem();
 	GetWorldSubSystem();
 	
 	while (window.isOpen())
@@ -29,6 +31,8 @@ int main()
 		UInputController::GetInputController().GetInput();
 		//игровая логика
 		UWorldSubSystem::GetWorldSubSystem().UpdateEntities();
+
+		UAudioSubSystem::GetUAudioSubSystem().Update();
 		//рендер
 		URenderSubSystem::GetRenderSubSystem().DrawEntities(window);
 	}

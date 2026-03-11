@@ -165,8 +165,10 @@
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="AActor.cpp" />
     <ClCompile Include="ARoom.cpp" />
+    <ClCompile Include="SoundSample.cpp" />
     <ClCompile Include="UActorComponent.cpp" />
     <ClCompile Include="UAnimatedSpriteComponent.cpp" />
+    <ClCompile Include="UAudioSubSystem.cpp" />
     <ClCompile Include="UInputController.cpp" />
     <ClCompile Include="UObject.cpp" />
     <ClCompile Include="URenderSubSystem.cpp" />
@@ -184,8 +186,10 @@
     <ClInclude Include="CorePhysics.h" />
     <ClInclude Include="FLibrary.h" />
     <ClInclude Include="ARoom.h" />
+    <ClInclude Include="SoundSample.h" />
     <ClInclude Include="UActorComponent.h" />
     <ClInclude Include="UAnimatedSpriteComponent.h" />
+    <ClInclude Include="UAudioSubSystem.h" />
     <ClInclude Include="UInputController.h" />
     <ClInclude Include="UObject.h" />
     <ClInclude Include="URenderSubSystem.h" />
